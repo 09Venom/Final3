@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Hidden radios for scenes -->
+  <input type="radio" name="scene" id="scene1" class="scene-radio" checked>
+  <input type="radio" name="scene" id="scene2" class="scene-radio">
+  <input type="radio" name="scene" id="scene3" class="scene-radio">
+  <input type="radio" name="scene" id="scene4" class="scene-radio">
+
+  <!-- Scene 1 -->
+  <div id="scene1-container" class="glass-scene">
+    <h1>🎉 Welcome 🎉</h1>
+    <button class="surprise-button" id="nextBtn">Surprise</button>
+  </div>
+
+  <!-- Scene 2 -->
+  <div id="scene2-container" class="cake-scene">
+    <canvas id="sparkles-scene2"></canvas>
+    <div class="background"></div>
+    <div class="cake">
+      <div class="layer layer-bottom"></div>
+      <div class="layer layer-middle"></div>
+      <div class="layer layer-top"></div>
+      <div class="icing"></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+    <div class="birthday-message">Happy Birthday! 🎂</div>
+    <div class="surprise-controls">
+      <button class="surprise-button" id="prevBtn">Prev</button>
+      <button class="surprise-button" id="nextBtn2">Next</button>
+    </div>
+  </div>
+
+  <!-- Scene 3 -->
+  <div id="scene3-container">
+    <canvas id="sparkles-scene3"></canvas>
+    <div class="carousel">
+      <div class="carousel-item"><div class="carousel-box"><span class="num">1</span><span class="title">🎁</span></div></div>
+      <div class="carousel-item"><div class="carousel-box"><span class="num">2</span><span class="title">💖</span></div></div>
+      <div class="carousel-item"><div class="carousel-box"><span class="num">3</span><span class="title">🌹</span></div></div>
+    </div>
+    <button class="intention-btn">Go to Scene 4</button>
+    <button class="surprise-button previous-btn" id="prevFrom3">Back</button>
+  </div>
+
+  <!-- Scene 4 -->
+  <div id="scene4-container">
+    <header class="page4-header"><h1>💌 Messages</h1></header>
+    <div class="page4-container">
+      <ul class="page4-ul"></ul>
+      <div class="page4-border"></div>
+      <div class="page4-controls">
+        <button aria-label="Previous message">▲</button>
+        <button aria-label="Next message">▼</button>
+      </div>
+    </div>
+    <button class="back-btn">Back</button>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/scene2.js"></script>
+  <script src="js/scene3.js"></script>
+  <script src="js/scene4.js"></script>
+</body>
+</html>

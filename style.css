@@ -1,0 +1,41 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { min-height: 100vh; overflow: hidden; background: #122139; color: #fff; }
+.scene-radio { display: none; }
+.surprise-controls { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); display: flex; gap: 12px; z-index: 1000; }
+.surprise-button { padding: 10px 20px; background: #d52d58; color: #fff; border: none; border-radius: 20px; cursor: pointer; font-size: 18px; font-family: 'Comic Sans MS', cursive; box-shadow: 0 0 10px rgba(245,148,184,.47); }
+.surprise-button:hover { background: #b81b43; box-shadow: 0 0 20px #f594b8; }
+
+/* Scene containers hidden by default */
+#scene1-container, #scene2-container, #scene3-container, #scene4-container { display: none; position: absolute; inset: 0; }
+#scene1:checked ~ #scene1-container { display: block; }
+#scene2:checked ~ #scene2-container { display: block; }
+#scene3:checked ~ #scene3-container { display: block; }
+#scene4:checked ~ #scene4-container { display: block; }
+
+/* Scene 2 cake */
+#scene2-container{ background: linear-gradient(180deg, #ffe1f0, #ffc6ff); }
+.cake-scene .background{ position:absolute; width:100%; height:100%; background: radial-gradient(circle at center, #fff0fa 0%, transparent 70%); animation:none; z-index:0; }
+#sparkles-scene2{ position:absolute; inset:0; z-index:-1; display:none; }
+.cake-scene .birthday-message{ position:absolute; top:20%; left:50%; transform:translateX(-50%); font-family:'Comic Sans MS', cursive; font-size:clamp(24px,5vw,36px); color:#d52d58; text-align:center; text-shadow:0 2px 4px rgba(0,0,0,.2); opacity:0; z-index:2; }
+#scene2:checked ~ #scene2-container .birthday-message{ animation: fadeInScale 1.5s ease-in-out forwards; }
+.cake-scene .cake{ position:absolute; bottom:80px; left:50%; transform:translateX(-50%); width:200px; height:200px; z-index:1; }
+.cake-scene .layer{ position:absolute; width:200px; height:60px; background:#f7aef8; border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,.2); }
+.cake-scene .layer-bottom{ bottom:0; background:#f7aef8; }
+.cake-scene .layer-middle{ bottom:60px; background:#b388eb; }
+.cake-scene .layer-top{ bottom:120px; background:#8093f1; }
+.cake-scene .icing{ position:absolute; bottom:150px; width:200px; height:20px; background:#fff; border-radius:50% 50% 0 0; box-shadow:0 -3px 10px rgba(0,0,0,.1); }
+.cake-scene .candle{ position:absolute; bottom:170px; left:50%; width:10px; height:40px; background:#ff5e5e; transform:translateX(-50%); border-radius:2px; }
+.cake-scene .flame{ position:absolute; top:-15px; left:50%; width:14px; height:14px; background: radial-gradient(ellipse at center, #ffdc73, #ff9900); border-radius:50%; transform:translateX(-50%); animation:none; }
+#scene2:checked ~ #scene2-container .background{ animation: pulse 6s ease-in-out infinite; }
+#scene2:checked ~ #scene2-container .flame{ animation: flicker .3s infinite; }
+#scene2:checked ~ #scene2-container #sparkles-scene2{ display:block; }
+@keyframes pulse{ 0%,100%{ opacity:.6; } 50%{ opacity:1; } }
+@keyframes flicker{ 0%,100%{ transform: translateX(-50%) scale(1); } 50%{ transform: translateX(-50%) scale(1.2); } }
+@keyframes fadeInScale{ 0%{ opacity:0; transform:translateX(-50%) scale(.8); } 100%{ opacity:1; transform:translateX(-50%) scale(1); } }
+
+/* Scene 3 carousel */
+#scene3-container{ background: linear-gradient(135deg, #800000, #4B0000); display:grid; place-items:center; }
+#sparkles-scene3{ position:absolute; inset:0; z-index:-1; }
+
+/* Scene 4 */
+#scene4-container{ width:100%; height:100vh; display:grid; place-items:center; background: linear-gradient(135deg, #800000, #4B0000); }
